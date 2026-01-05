@@ -10,7 +10,7 @@ def stat(): #defining the function
 
     lynx_avg = np.mean(data[:,2]) #finding the average amount of lynx populations of the entire dataset
 
-    sum_all_species = np.sum(data[:,1:3], axis=1) #summing all data between columns year and carrots to get sum of all species
+    sum_all_species = np.sum(data[:,1:], axis=1) #summing all data for the species
     new_data = np.column_stack((data, sum_all_species)) #adding the new sum_all_species to the end of the array which creates new_data
 
     new_data[new_data[:, 3] < 40000, 3] = 0 #setting all carrot values below 40000 to 0
